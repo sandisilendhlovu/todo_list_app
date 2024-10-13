@@ -1,0 +1,29 @@
+{# templates/task/show.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>{{ task.title }}</h1>
+
+    <p>
+        {% if task.isCompleted %}
+            Status: Completed
+        {% else %}
+            Status: Not Completed
+        {% endif %}
+    </p>
+
+    <a href="{{ path('task_edit', { 'id': task.id }) }}">Edit</a>
+    <br />
+    <br />
+    <a href="{{ path('task_index') }}">Back to Task List</a>
+    <br />
+    <br />
+
+
+    <form action="{{ path('task_delete', { 'id': task.id }) }}" method="post" style="display:inline;">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+    </form>
+{% endblock %}
+

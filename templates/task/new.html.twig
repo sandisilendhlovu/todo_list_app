@@ -1,0 +1,17 @@
+{# templates/task/new.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Create New Task</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.title) }}
+            <br />
+        {{ form_row(form.isCompleted) }}
+        <br />
+        <button type="submit">Save</button>
+    {{ form_end(form) }}
+        <br />
+    <a href="{{ path('task_index') }}">Back to Task List</a>
+{% endblock %}

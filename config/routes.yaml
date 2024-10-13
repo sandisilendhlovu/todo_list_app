@@ -1,3 +1,24 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+# config/routes.yaml
+
+task_index:
+    path: /tasks
+    controller: App\Controller\TaskController::index
+
+task_new:
+    path: /task/new
+    controller: App\Controller\TaskController::new
+
+task_show:
+    path: /task/{id}
+    controller: App\Controller\TaskController::show
+
+task_edit:
+    path: /task/{id}/edit
+    controller: App\Controller\TaskController::edit
+
+task_delete:
+    path: /task/{id}/delete
+    controller: App\Controller\TaskController::delete
+    methods: [POST]
+
+
